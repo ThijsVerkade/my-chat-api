@@ -1,29 +1,29 @@
 <?php
 
-namespace App\Exceptions\Message;
+namespace App\Modules\Messages\Exceptions;
 
 use App\Exceptions\ApiException;
 use Symfony\Component\HttpFoundation\Response;
 
-class InvalidMessage extends ApiException
+class MessageException extends ApiException
 {
-    public static function FromUserNotFound(
+    public static function senderNotFound(
         string $message = null,
         \Throwable $previous = null,
     ): self {
         if (is_null($message)) {
-            $message = 'From user not found';
+            $message = 'Sender not found';
         }
 
         return new self('sender_not_found', $message, null, Response::HTTP_NOT_FOUND, $previous);
     }
 
-    public static function ToUserNotFound(
+     public static function recipientNotFound(
         string $message = null,
         \Throwable $previous = null,
     ): self {
         if (is_null($message)) {
-            $message = 'To user not found';
+            $message = 'Recipient not found';
         }
 
         return new self('recipient_not_found', $message, null, Response::HTTP_NOT_FOUND, $previous);

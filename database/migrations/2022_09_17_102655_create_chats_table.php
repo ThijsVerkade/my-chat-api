@@ -8,17 +8,20 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('chats', function (Blueprint $table) {
             $table->id();
             $table->uuid()->unique();
-            $table->foreignId('chat_id');
-            $table->text('message');
+            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('recipient_id');
             $table->timestamps();
+
+            $table->foreign('sender_id')->references('id')->on('users');
+            $table->foreign('recipient_id')->references('id')->on('users');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('chats');
     }
 };

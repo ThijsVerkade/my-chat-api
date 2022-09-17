@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Message;
 
 use App\Http\Controllers\Controller;
-use App\Services\MessageService;
+use App\Modules\Chats\Services\MessageService;
+use App\Modules\Messages\Services\CreateMessageService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Response;
 
-class Create extends Controller
+final class Create extends Controller
 {
-    public function __construct(private MessageService $service)
+    public function __construct(private CreateMessageService $service)
     {
     }
 

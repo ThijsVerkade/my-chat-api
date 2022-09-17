@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Message;
 
-use App\Models\Message;
-use App\Models\User;
+use App\Modules\Messages\Message;
+use App\Modules\Users\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Symfony\Component\HttpFoundation\Response;
