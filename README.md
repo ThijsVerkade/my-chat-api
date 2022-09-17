@@ -6,6 +6,7 @@
 - Created API endpoint to create messages
 - Use new repository service Pattern
 - Introducing chats
+- Added Larastan (PHPStan)
 
 ## Todo
 - Add exception handling for validation
@@ -14,6 +15,5 @@
 - Create API endpoint to get messages
 - Create API endpoint to update messages
 - Encrypt text in messages
-- Add PHPStan
 - Add test coverage with badges
 - Add mutations tests

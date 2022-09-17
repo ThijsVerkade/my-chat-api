@@ -25,14 +25,4 @@ class User extends Model
         'name',
         'email',
     ];
-
-    public function fromMessages(): HasMany
-    {
-        return $this->hasMany(Message::class, 'sender');
-    }
-
-    public function toMessages(): HasMany
-    {
-        return $this->hasMany(Message::class, 'recipient');
-    }
 }
